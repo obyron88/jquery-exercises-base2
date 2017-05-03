@@ -14,12 +14,30 @@
       <!-------------------------------------------- Exercice 1 -------------------------------------->
       <h3><em>Exercice 1</em></h3>
       <p>Créer un bouton "cliquez-moi!" en html. <br>Au clic sur le bouton, afficher une boite de dialogue avec le message :<br><b>"On vous ferait vraiment faire n'importe quoi !"</b></p>
+<button id="button1"> cliquez-moi!</button>
 
+<script>
+$(document).ready(function(){
+  $("#button1").click(function(){
+  alert("On vous ferait vraiment faire n'importe quoi !");
+  });
+});
+
+
+
+</script>
       <hr>
       <!-------------------------------------------- Exercice 2 -------------------------------------->
       <h3>Exercice 2</h3>
       <p>Au double click, modifier la largeur de l'image à <b>1735px</b></p>
-      <img src="image1.jpg"/>
+      <img id="tigre" src="image1.jpg"/>
+      <script>
+$(document).ready(function(){
+    $("#tigre").dblclick(function(){
+      $("#tigre").width(1735);
+    });              
+});
+</script>
 
       <hr>
       <!-------------------------------------------- Exercice 3 -------------------------------------->
@@ -33,6 +51,15 @@
           <li>Taille de la police : <b>20px</b></li>
           </ul>
       </p>
+      <script>
+      $(document).ready(function(){
+        $("#exo3").hover(function(){
+        $("#exo3").css({"background-color": "#63A8BC", "color": "#fff", "height": "370px", "width": "450px", "font-size": "20px"});
+      }, function(){
+        $("#exo3").css({"background-color": "", "color": "", "height": "", "width": "", "font-size": ""});
+      });
+      });
+      </script>
       <div id="exo3">
           <p><b>"</b> Il y existe deux manières de concevoir un logiciel. La première, c’est de le faire si simple qu’il est évident qu’il ne présente aucun problème. La seconde, c’est de le faire si compliqué qu’il ne présente aucun problème évident. La première méthode est de loin la plus complexe. <b>"</b>
               <br><b>Charles Antony Richard Hoare</b></p>
@@ -49,18 +76,64 @@
       <button id="btn1">Vert</button>
       <button id="btn2">Bleu</button>
       <button id="btn3">Rouge</button>
-
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $("#exo4").css({"color": "green", "border-color": "green"});
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#btn2").click(function(){
+    $("#exo4").css({"color": "Blue", "border-color": "Blue"});
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#btn3").click(function(){
+    $("#exo4").css({"color": "red", "border-color": "red"});
+  });
+});
+</script>
       <hr>
       <!-------------------------------------------- Exercice 5 -------------------------------------->
       <h3>Exercice 5</h3>
       <p>Quand un champ a le focus, définir sa bordure à "1px solid green". Quand le champ perd le focus, définir la bordure à "1px solid red"</p>
 
       <form>
-          <input type="text" placeholder="Votre nom">
-          <input type="text" placeholder="Votre prénom">
-          <input type="password" placeholder="Votre mot de passe">
+          <input id="borderfocus1" type="text" placeholder="Votre nom">
+          <input id="borderfocus2" type="text" placeholder="Votre prénom">
+          <input id="borderfocus3" type="password" placeholder="Votre mot de passe">
           <button type="submit">Valider</button>
       </form>
+<script>
+$(document).ready(function(){
+  $("#borderfocus1").focus(function(){
+    $("#borderfocus1").css({"border": "1px solid", "border-color": "green"});
+  });
+  $('#borderfocus1').blur(function(){
+    $("#borderfocus1").css({"border": "1px solid", "border-color": "red"});
+});
+});
+$(document).ready(function(){
+  $("#borderfocus2").focus(function(){
+    $("#borderfocus2").css({"border": "1px solid", "border-color": "green"});
+  });
+  $('#borderfocus2').blur(function(){
+    $("#borderfocus2").css({"border": "1px solid", "border-color": "red"});
+});
+});
+$(document).ready(function(){
+  $("#borderfocus3").focus(function(){
+    $("#borderfocus3").css({"border": "1px solid", "border-color": "green"});
+  });
+  $('#borderfocus3').blur(function(){
+    $("#borderfocus3").css({"border": "1px solid", "border-color": "red"});
+});
+});
+</script>
 
       <hr>
       <!-------------------------------------------- Exercice 6 -------------------------------------->
@@ -74,7 +147,25 @@
       <button id="btn4">Vert</button>
       <button id="btn5">Bleu</button>
       <button id="btn6">Rouge</button>
-
+      <script>
+      $(document).ready(function(){
+        $("#btn4").hover(function(){
+          $("#exo6").css({"color": "green", "border-color": "green"});
+       }, function(){
+          $("#exo6").css({"color": "", "border-color": ""});
+      });
+        $("#btn5").hover(function(){
+          $("#exo6").css({"color": "blue", "border-color": "blue"});
+        }, function(){
+          $("#exo6").css({"color": "", "border-color": ""});
+        });
+        $("#btn6").hover(function(){
+          $("#exo6").css({"color": "red", "border-color": "red"});
+        }, function(){
+          $("#exo6").css({"color": "", "border-color": ""});
+        });
+      });
+      </script>
 
   </body>
 </html>
